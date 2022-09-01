@@ -38,10 +38,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('api', [ApiController::class, 'list'])->name('api');
 Route::post('api', [ApiController::class, 'leverageChange'])->name('leverage');
 //binance
-Route::get('trade-buy', [ApiController::class, 'buyBinanceTrade'])->name('buy');
+Route::get('trade-buy', [ApiController::class, 'buyBinanceTradeView'])->name('buy');
+Route::get('trade-sell', [ApiController::class, 'sellBinanceTradeView'])->name('sell');
 Route::post('trade-buy', [ApiController::class, 'buyBinanceTrade']);
-Route::get('trade-sell', [ApiController::class, 'sellBinanceTrade'])->name('sell');
 Route::post('trade-sell', [ApiController::class, 'sellBinanceTrade']);
+
+
 //bybit
 Route::get('trade-buy-bybit', [BybitController::class, 'buyTrade'])->name('buyBybit');
 Route::post('trade-buy-bybit', [BybitController::class, 'buyTrade']);

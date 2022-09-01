@@ -18,10 +18,6 @@
                 <div class="row">
                     <form method="post" action="{{ route('buyBybit') }}" class="col-sm-6">
                         @csrf              
-                        {{-- <div class="mb-3">
-                            <label for="price" class="form-label">Price</label>
-                            <input type="text" name="price" placeholder="Enter price value" class="form-control" id="price">
-                        </div> --}}
                         <div class="mb-3">
                             <label for="quantity" class="form-label">Quantity</label>
                             <input type="text" step="any" name="quantity" placeholder="Enter quantity value" class="form-control" id="quantity">

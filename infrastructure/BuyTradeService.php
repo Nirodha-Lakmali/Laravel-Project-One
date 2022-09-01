@@ -14,7 +14,7 @@ class BuyTradeService{
         $parameters['Type'] = 'MARKET';
   
         $buy_binance_trade = ApiBinanceFacade::signedRequest('POST','/fapi/v1/order',$parameters);
-  
+        
         return $buy_binance_trade;
     }
 
