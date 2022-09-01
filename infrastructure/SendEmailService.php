@@ -12,7 +12,7 @@ class SendEmailService{
 
         $content = ['message' => $symbol.' trade opened'];
 
-        Mail::to('sahan@speralabs.com')->send(new TradeResultEmail($content));
+        Mail::to('nirodha41@gmail.com')->send(new TradeResultEmail($content));
         
     }
 

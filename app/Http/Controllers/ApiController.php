@@ -44,9 +44,12 @@ class ApiController extends Controller
     {
         $quantity = $request ->quantity;
         $buy_trade = BuyTradeFacade::getbuytrade($quantity);
+   
+        if(!empty($buy_trade)){
+            $symbol = $buy_trade->symbol;
+            $this->sendOrderEmail($symbol);
+        }
         
-        $symbol = $buy_trade->symbol;
-        $this->sendOrderEmail($symbol);
         return redirect('trade-buy');
         
     }
@@ -55,9 +58,12 @@ class ApiController extends Controller
     {
         $quantity= $request ->quantity;
         $sell_trade = SellTradeFacade::getselltrade($quantity);
-  
-        $symbol = $sell_trade->symbol;
-        $this->sendOrderEmail($symbol);
+      
+        if(!empty($sell_trade)){
+            $symbol = $sell_trade->symbol;
+            $this->sendOrderEmail($symbol);
+        }
+        
         return redirect('trade-sell');
            
     }
